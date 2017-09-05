@@ -74,6 +74,6 @@ print(arr.T)
 print(np.dot(arr.T,arr));
 
 arr=np.arange(16).reshape(2,2,4)
-print(arr)
+print(arr.shape)
 print(arr.transpose((1,0,2)))
 print(arr.swapaxes(1,2)) #多维数组行转列
