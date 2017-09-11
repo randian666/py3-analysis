@@ -38,6 +38,6 @@ print(ss)
 print('##############################')
 print(ss.cumsum())
 walks=ss.cumsum()
-print(walks) #返回两两求和，然后与下一个元素求和的数组
+print(walks) #返回两两求和的数组，然后与下一个元素求和的数组
 print(walks.max())
 print(walks.min())
