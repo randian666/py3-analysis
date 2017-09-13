@@ -40,5 +40,11 @@ print(obj4)
 print('---------------------------------------')
 sdata1={'Joe':101,'Bob':200}
 obj5=Series(sdata1,index=states)
-print(obj4+obj5) #算数运算中会自动对齐不同索引的数据
+obj6=Series({'Joe':100,'Bob':200,'Demo':300})
+obje7=obj5+obj6
+print(obj5+obj6) #算数运算中会自动对齐不同索引的数据
+print(obje7.isnull())
+print(pd.isnull(obje7))
+for v in obje7.values:
+    print(v)
 print('---------------------------------------')

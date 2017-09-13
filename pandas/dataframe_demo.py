@@ -20,7 +20,7 @@ print(df3)
 df2=DataFrame(data,columns=['name','age','score','addr'],index=['one','two','thrid'])
 print(df2)
 print('---------------------------------------')
-#可以将DataFrame列获取尾一个Series
+#可以将DataFrame列获取一个Series
 print(df2['name'])
 print(df2.name)
 #根据行索引获取一行数据
