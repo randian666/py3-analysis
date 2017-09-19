@@ -40,19 +40,22 @@ print(np.where(arr<0,1,np.where(arr>1,100,200)))#嵌套where
 
 
 #统计
-arr=np.array([[1,2,3],[4,5,6]])
+arr=np.array([[1,2,9],[0,5,6],[2,8,6]])
 print(arr.sum()) #所有元素累加
 print(arr.mean())  #平均值
 print(arr.sum(axis=0))  #根据列求和
 print(arr.sum(axis=1))  #根据行求和
 print(arr.max(axis=1))
+print('------------')
+print(arr.max(0))
+print(arr.min(0))
 
-arr=randn(100);
-print((arr>0).sum())  #大于0的数值相加
-
-print(arr.sort())  #排序
-
-print(np.unique(arr)) #返回数组唯一值
+# arr=randn(100);
+# print((arr>0).sum())  #大于0的数值相加
+#
+# print(arr.sort())  #排序
+# print(arr.argsort()) #返回从小到大的索引值
+# print(np.unique(arr)) #返回数组唯一值
 
 
 

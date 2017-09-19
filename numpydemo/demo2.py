@@ -11,6 +11,7 @@ arry=np.array([[1,2,3,4,4],[2,2,1,3,5]])
 print(arry* arry)
 print(arry+arry)
 print(arry*0.5)
+print(arry/2)
 
 #数组切片
 print('~~~~~~~~~~数组切片~~~~~~~~~~~~~~~~~~')
