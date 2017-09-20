@@ -62,10 +62,8 @@ def datingClassTest():
     numTestVecs = int(m * hoRatio);  # 测试次数
     errorCount = 0;
     for i in range(numTestVecs):
-        pass;
         # 前numTestVecs个作为测试数据，其他的作为训练样本数据。
-        classResult = knn.classify0(normDataSet[i, :], normDataSet[numTestVecs:m, :], classLabelVector[numTestVecs:m],
-                                    3)
+        classResult = knn.classify0(normDataSet[i, :], normDataSet[numTestVecs:m, :], classLabelVector[numTestVecs:m],3)
         print('the classify0 came back with:%s,the real answer is %s' % (classResult, classLabelVector[i]))
         if (classResult != classLabelVector[i]):
             errorCount += 1;
