@@ -48,3 +48,9 @@ print(pd.isnull(obje7))
 for v in obje7.values:
     print(v)
 print('---------------------------------------')
+print('---------------------------------------')
+#索引修改
+obj=Series([4,5,1,3],index=['a','b','c','d'])
+print(obj)
+obj2=obj.reindex(['a','b','c','d','e'],fill_value=0.0) #不存的索引就引入缺失或者fill_value
+print(obj2)

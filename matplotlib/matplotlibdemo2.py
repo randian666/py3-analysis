@@ -7,7 +7,6 @@ from pandas import Series,DataFrame
 import pandas as pd
 '''
 pandas中绘制图
-
 '''
 def demo1():
     s=Series(randn(10).cumsum(),index=np.arange(0,100,10))

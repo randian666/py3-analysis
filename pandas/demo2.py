@@ -3,13 +3,13 @@
 from pandas import Series,DataFrame
 import pandas as pd
 import numpy as np
+'''
+DataFrame是一个表格型的数据结构，它包含一组有序的列，每列可以是不同的值类型。DataFrame既有行索引也有列索引，它可以被看做由Series组成的字典。
+'''
+data={"state":['a','b','c','d'],"year":['2010','2011','2012','2013']}
+data_frame=DataFrame(data)
+print(data_frame)
 print('---------------------------------------')
-#索引修改
-obj=Series([4,5,1,3],index=['a','b','c','d'])
-print(obj)
-obj2=obj.reindex(['a','b','c','d','e'],fill_value=0.0) #不存的索引就引入缺失或者fill_value
-print(obj2)
-
 frame=DataFrame(np.arange(9).reshape(3,3),index=['a','c','d'],columns=['Ohio','Texas','China'])
 print(frame)
 print(frame.reindex(['a','b','c','d'],fill_value=-1))
