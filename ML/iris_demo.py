@@ -61,7 +61,9 @@ knn=KNeighborsClassifier(n_neighbors=1)
 #，输入参数为X_train 和y_train，二者都是NumPy 数组，前者包含训练数据，后者包含相应的训练标签
 knn.fit(X_train,Y_train)
 #做出预测
-X_new=np.array([[5,2.9,1,0.2]])
+new_data=[5,2.9,1,0.2]
+X_new=np.array([new_data],dtype=np.float64)
+print(X_new)
 predictResult=knn.predict(X_new)
 print(predictResult)
 print(iris_dataset['target_names'][predictResult])
