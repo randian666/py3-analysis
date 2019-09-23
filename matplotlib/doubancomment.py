@@ -10,11 +10,8 @@ font.family: Microsoft YaHei
 可显示为中文
 
 '''
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib
-
+import pandas as pd
 
 df=pd.read_csv("csv/xiebuyazheng.csv",header=None,encoding="utf-8")
 
@@ -23,10 +20,9 @@ datas=df[2].value_counts()
 # print(datas)
 scale_ls = datas.index
 index_ls = datas.values
-# plt.bar(scale_ls, index_ls,label='Men',color='rgb')
-# #_ = plt.xticks(scale_ls,index_ls)  ## 可以设置坐标字
-# plt.title('邪不压正电影评论质量')
-# plt.show()
+plt.bar(scale_ls, index_ls,label='Men',color='rgb')
+plt.title('zhiliang')
+plt.show()
 
 
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
@@ -38,5 +34,5 @@ fig1, ax1 = plt.subplots()
 ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.title('邪不压正电影评论质量')
+plt.title('zhiliang')
 plt.show()
