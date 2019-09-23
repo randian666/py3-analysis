@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # coding:utf-8
 
-from sklearn.preprocessing import MinMaxScaler,StandardScaler
-
+from sklearn.preprocessing import MinMaxScaler,StandardScaler,Imputer
+import numpy as np
 '''
 数据特征预处理
+通过特定的统计方法将数据转换成算法要求的数据
 1、归一化
 2、标准化
 '''
@@ -12,14 +13,15 @@ from sklearn.preprocessing import MinMaxScaler,StandardScaler
 
 '''
 归一化处理
-公式:X'=(x-min)/(max-min)  X''=X'*(mx-mi)+mi
+公式:X'=(x-min)/(max-min)  根据范围计算公式： X''=X'*(mx-mi)+mi
 特定：通过对原始数据进行变换把数据映射到(默认为[0,1])之间
 总结：注意在特定场景下最大值最小值是变化的，另外，最大值与最小值非常容易受异常点影响，所有这种方法鲁棒性（稳定性）较差，只适合传统精确小数据场景。
 目的：使得某一个特征对最终结果不会造成更大的影响。
 '''
 def mm():
     mm=MinMaxScaler(feature_range=(2,3))
-    data=mm.fit_transform([[90,2,10,40],[60,4,15,45],[75,3,13,46]])
+    param = np.array([[90, 2, 10, 40], [60, 4, 15, 45], [75, 3, 13, 46]])
+    data=mm.fit_transform(param)
     print(data)
     print(type(data))
 
@@ -31,9 +33,20 @@ def mm():
 '''
 def stand():
     stand=StandardScaler()
-    data = stand.fit_transform([[90, 2, 10, 40], [60, 4, 15, 45], [75, 3, 13, 46]])
+    param=np.array([[90, 2, 10, 40], [60, 4, 15, 45], [75, 3, 13, 46]])
+    data = stand.fit_transform(param)
     print(data)
     print(type(data))
+
+'''
+缺失值处理
+'''
+def im():
+   #按列的平均值进行处理
+   im= Imputer(missing_values='NaN',strategy='mean',axis=0)
+   param = np.array([[1,2],[np.nan,3],[7,6]])
+   data=im.fit_transform(param)
+   print(data)
 if __name__ == '__main__':
-    mm()
-    stand()
+    # mm()
+    im()
