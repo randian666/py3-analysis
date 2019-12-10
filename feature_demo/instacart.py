@@ -9,6 +9,7 @@ products.csv  商品信息
 order_products__prior.csv 商品和订单信息
 orders.csv 用户的订单信息
 aisles.csv 商品所属具体物品类别
+
 '''
 import pandas as pd
 from sklearn.decomposition import PCA
