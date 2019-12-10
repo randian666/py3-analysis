@@ -1,6 +1,5 @@
 
 from os import path
-from scipy.misc import imread
 import matplotlib.pyplot as plt
 import jieba
 from wordcloud import WordCloud
@@ -27,11 +26,9 @@ if __name__ == '__main__':
     cut_text=''
     for row in df[0].values:
         cut_text +=seg_sentence(row)
-    color_mask = imread("timg.jpeg")
     cloud = WordCloud(
         font_path='simhei.ttf',  # 字体最好放在与脚本相同的目录下，而且必须设置
         background_color='white',
-        # mask=color_mask,
         max_words=2000,
         max_font_size=100
     )

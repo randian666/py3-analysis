@@ -12,16 +12,24 @@ font.family: Microsoft YaHei
 '''
 import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib as mpl
+
+mpl.rcParams['font.sans-serif'] = ['SimHei']
+mpl.rcParams['font.serif'] = ['SimHei']
+mpl.rcParams['axes.unicode_minus'] = False # 解决保存图像是负号'-'显示为方块的问题,或者转换负号为字符串
+
 
 df=pd.read_csv("csv/xiebuyazheng.csv",header=None,encoding="utf-8")
 
 #星星数判定评论质量 返回
 datas=df[2].value_counts()
-# print(datas)
+print(datas)
 scale_ls = datas.index
 index_ls = datas.values
+print(scale_ls)
+print(index_ls)
 plt.bar(scale_ls, index_ls,label='Men',color='rgb')
-plt.title('zhiliang')
+plt.title('评论质量')
 plt.show()
 
 
@@ -34,5 +42,5 @@ fig1, ax1 = plt.subplots()
 ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
         shadow=True, startangle=90)
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.title('zhiliang')
+plt.title('评论质量')
 plt.show()

@@ -58,11 +58,11 @@ def tfidfVec():
     con2 = jieba.cut('所谓坚强，就是放弃时不放弃，该哭时不哭泣。')
     content1 = " ".join(list(con1))
     conteng2 = " ".join(list(con2))
-    data = cv.fit_transform([content1, conteng2])
+    data = cv.fit_transform([content1,conteng2])
     new_data = data.toarray()
     print(new_data)
-    print(type(new_data))
+    # print(type(new_data))
     # 输出类别名称
     print(cv.get_feature_names())
 if __name__ == '__main__':
-    tfidfVec()
+    countvec()

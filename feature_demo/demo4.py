@@ -43,5 +43,6 @@ def pca():
     print(data)
     print(type(data))
 
+
 if __name__ == '__main__':
     pca()

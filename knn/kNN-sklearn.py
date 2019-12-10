@@ -16,7 +16,6 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import  train_test_split
 import pandas as pd
 import matplotlib.pyplot as plt
-import mglearn
 import numpy as np
 
 
@@ -44,9 +43,9 @@ print(X_train)
 print(y_train)
 
 #把训练集的数据转化为panda进行数据观察。
-# iris_dataframe=pd.DataFrame(X_train,columns=iris_dataset['feature_names'])
-# grr = pd.scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o',hist_kwds={'bins': 20}, s=60, alpha=.8,cmap=mglearn.cm3)
-# plt.show()
+iris_dataframe=pd.DataFrame(X_train,columns=iris_dataset['feature_names'])
+grr = pd.scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o',hist_kwds={'bins': 20}, s=60, alpha=.8,cmap=mglearn.cm3)
+plt.show()
 
 
 #K近邻算法
