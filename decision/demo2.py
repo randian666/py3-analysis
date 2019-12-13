@@ -6,6 +6,7 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn.model_selection import train_test_split,GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 '''
+随机森林
 泰坦尼克号数据
 在泰坦尼克号和titanic2数据帧描述泰坦尼克号上的个别乘客的生存状态。在泰坦尼克号的数据帧不包含从剧组信息，
 但它确实包含了乘客的一半的实际年龄。关于泰坦尼克号旅客的数据的主要来源是百科全书Titanica。
