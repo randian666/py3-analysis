@@ -47,7 +47,6 @@ iris_dataframe=pd.DataFrame(X_train,columns=iris_dataset['feature_names'])
 grr = pd.plotting.scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o',hist_kwds={'bins': 20}, s=60, alpha=.8)
 plt.show()
 
-
 #K近邻算法
 knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X_train,y_train)
@@ -59,5 +58,7 @@ knn.fit(X_train,y_train)
 
 #评估模型
 y_pred = knn.predict(X_test)
+print("预测出来的目标值：{}".format(y_pred))
+print("实际目标值：{}".format(y_test))
 # print("Test set score: {:.2f}".format(np.mean(y_pred == y_test)))
 print("Test set predictions: {}".format(knn.score(X_test, y_test)))
