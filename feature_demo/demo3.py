@@ -19,8 +19,10 @@ import numpy as np
 目的：使得某一个特征对最终结果不会造成更大的影响。
 '''
 def mm():
-    mm=MinMaxScaler(feature_range=(2,3))
+    mm=MinMaxScaler(feature_range=(0,1))
     param = np.array([[90, 2, 10, 40], [60, 4, 15, 45], [75, 3, 13, 46]])
+    # 异常数据演示
+    # param = np.array([[90, 2, 10, 40], [60, 4, 15, 45], [75, 3, 13, 46],[75000, 3, 13, 46]])
     data=mm.fit_transform(param)
     print(data)
     print(type(data))
@@ -41,6 +43,7 @@ def stand():
 
 '''
 缺失值处理
+缺失值只能是NaN。处理之前需要先把缺失数据替换成NaN。
 '''
 def im():
    #按列的平均值进行处理
@@ -49,5 +52,4 @@ def im():
    data=im.fit_transform(param)
    print(data)
 if __name__ == '__main__':
-    # mm()
     im()

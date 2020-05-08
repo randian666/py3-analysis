@@ -17,7 +17,7 @@ def knncls():
     # print(data.head(10))
     #处理数据
     #1、数据过大缩小数据范围,通过query查询数据进行帅选
-    data=data.query("x>1.0 & x<1.25 & y>2.5 & y<2.75")
+    data=data.query("x>2.0 & x<2.25 & y>3.5 & y<3.75")
 
     #2、处理时间,
     time_val=pd.to_datetime(data['time'],unit='s')
