@@ -50,11 +50,6 @@ plt.show()
 #K近邻算法
 knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X_train,y_train)
-#　做出预测
-# X_new = np.array([[4.6,3.2,1.4,0.3]])
-# prediction = knn.predict(X_new)
-# print("Prediction: {}".format(prediction))
-# print("Predicted target name: {}".format(iris_dataset['target_names'][prediction]))
 
 #评估模型
 y_pred = knn.predict(X_test)
@@ -62,3 +57,9 @@ print("预测出来的目标值：{}".format(y_pred))
 print("实际目标值：{}".format(y_test))
 # print("Test set score: {:.2f}".format(np.mean(y_pred == y_test)))
 print("Test set predictions: {}".format(knn.score(X_test, y_test)))
+
+#　做出预测
+X_new = np.array([[4.6,3.2,1.4,0.3]])
+prediction = knn.predict(X_new)
+print("Prediction: {}".format(prediction))
+print("Predicted target name: {}".format(iris_dataset['target_names'][prediction]))

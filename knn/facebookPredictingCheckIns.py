@@ -54,25 +54,25 @@ def knncls():
     '''
     算法预测、评估算法
     '''
-    # knn=KNeighborsClassifier(n_neighbors=5)
-    # #1、训练数据
-    # knn.fit(x_train,y_train)
-    # #2、进行预测
-    # y_predict=knn.predict(x_test)
-    # print("预测目标的签到位置：",y_predict)
-    # #3、评估算法
-    # score = knn.score(x_test, y_test)
-    # print("准确率为：",score)
+    knn=KNeighborsClassifier(n_neighbors=5)
+    #1、训练数据
+    knn.fit(x_train,y_train)
+    #2、进行预测
+    y_predict=knn.predict(x_test)
+    print("预测目标的签到位置：",y_predict)
+    #3、评估算法
+    score = knn.score(x_test, y_test)
+    print("准确率为：",score)
     #网格搜索参数调优
-    knn=KNeighborsClassifier()
-    param={"n_neighbors":[3,5,7,10,15]}
-    gs=GridSearchCV(knn,param_grid=param,cv=5);
-    #进行预测
-    gs.fit(x_train,y_train)
-    #预测准确率
-    print("在测试集上准确率：",gs.score(x_test,y_test))
-    print("在交叉验证当中最好的结果：",gs.best_score_)
-    print("选择最好的模型是：",gs.best_estimator_)
-    print("每次超参数每次交叉验证的结果：",gs.cv_results_)
+    # knn=KNeighborsClassifier()
+    # param={"n_neighbors":[3,5,7,10,15]}
+    # gs=GridSearchCV(knn,param_grid=param,cv=5);
+    # #进行预测
+    # gs.fit(x_train,y_train)
+    # #预测准确率
+    # print("在测试集上准确率：",gs.score(x_test,y_test))
+    # print("在交叉验证当中最好的结果：",gs.best_score_)
+    # print("选择最好的模型是：",gs.best_estimator_)
+    # print("每次超参数每次交叉验证的结果：",gs.cv_results_)
 if __name__ == '__main__':
     knncls()

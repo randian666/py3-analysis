@@ -26,7 +26,9 @@ from sklearn.decomposition import PCA
 def var():
     #方差为0的的数据删除
     var=VarianceThreshold(threshold=0)
-    data=var.fit_transform([[0,2,0,3],[0,1,4,3],[0,1,1,3]])
+    data=var.fit_transform([[0,2,0,3]
+                            ,[0,1,4,3],
+                            [0,1,1,3]])
     print(data)
     print(type(data))
 

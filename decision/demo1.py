@@ -5,7 +5,8 @@ import pandas as pd
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier,export_graphviz
-
+# 导入dot插件库
+import pydotplus
 '''
 泰坦尼克号数据
 在泰坦尼克号和titanic2数据帧描述泰坦尼克号上的个别乘客的生存状态。在泰坦尼克号的数据帧不包含从剧组信息，
@@ -47,5 +48,9 @@ def decision():
     print("准确率：",dec.score(x_test,y_test))
     #决策树的结构、本地保存
     export_graphviz(dec,out_file='tree.dot',feature_names=['age', 'pclass=1st', 'pclass=2nd', 'pclass=3rd', 'sex=female', 'sex=male'])
+    # 展示可视化图
+    # (graph,) = pydotplus.graph_from_dot_file('tree.dot')
+    # graph.write_png('tree.png')
+
 if __name__ == '__main__':
     decision();

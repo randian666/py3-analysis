@@ -20,7 +20,7 @@ import numpy as np
 '''
 def mm():
     mm=MinMaxScaler(feature_range=(0,1))
-    param = np.array([[90, 2, 10, 40], [60, 4, 15, 45], [75, 3, 13, 46]])
+    param = np.array([[90, 2, 10, 40], [60, 4, 15, 45], [75000, 3, 13, 46]])
     # 异常数据演示
     # param = np.array([[90, 2, 10, 40], [60, 4, 15, 45], [75, 3, 13, 46],[75000, 3, 13, 46]])
     data=mm.fit_transform(param)
