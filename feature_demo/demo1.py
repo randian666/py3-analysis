@@ -12,7 +12,7 @@ def dictvec():
     #sparse=False 输出ndarray 二维数组
     dict=DictVectorizer(sparse=False)
     #调用fit_transform进行特征转化
-    data=dict.fit_transform([{'city':'上海','etmperature':100},{'city':'北京','etmperature':70},{'city':'成都','etmperature':30}])
+    data=dict.fit_transform([{'city':'上海','etmperature':100},{'city':'上海','etmperature':100},{'city':'北京','etmperature':70},{'city':'成都','etmperature':30},{'city':'东京','etmperature':10}])
     print(data)
     print(type(data))
     #输出类别名称

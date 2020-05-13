@@ -21,11 +21,14 @@ from sklearn.decomposition import PCA
 '''
 
 '''
-特征选择-删除低方差的特征
+特征选择过滤式-删除低方差的特征
 '''
 def var():
+    #方差为0的的数据删除
     var=VarianceThreshold(threshold=0)
-    data=var.fit_transform([[0,2,0,3],[0,1,4,3],[0,1,1,3]])
+    data=var.fit_transform([[0,2,0,3]
+                            ,[0,1,4,3],
+                            [0,1,1,3]])
     print(data)
     print(type(data))
 

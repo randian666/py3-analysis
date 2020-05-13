@@ -16,7 +16,6 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import  train_test_split
 import pandas as pd
 import matplotlib.pyplot as plt
-import mglearn
 import numpy as np
 
 
@@ -44,25 +43,24 @@ print(X_train)
 print(y_train)
 
 #把训练集的数据转化为panda进行数据观察。
-# iris_dataframe=pd.DataFrame(X_train,columns=iris_dataset['feature_names'])
-# grr = pd.scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o',hist_kwds={'bins': 20}, s=60, alpha=.8,cmap=mglearn.cm3)
-# plt.show()
+iris_dataframe=pd.DataFrame(X_train,columns=iris_dataset['feature_names'])
+grr = pd.plotting.scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o',hist_kwds={'bins': 20}, s=60, alpha=.8)
+plt.show()
 
 
 #K近邻算法
 knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X_train,y_train)
-clf=KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',metric_params=None, n_jobs=1, n_neighbors=1, p=2,weights='uniform')
+
+#评估模型
+y_pred = knn.predict(X_test)
+print("预测出来的目标值：{}".format(y_pred))
+print("实际目标值：{}".format(y_test))
+# print("Test set score: {:.2f}".format(np.mean(y_pred == y_test)))
+print("Test set predictions: {}".format(knn.score(X_test, y_test)))
 
 #　做出预测
 X_new = np.array([[4.6,3.2,1.4,0.3]])
 prediction = knn.predict(X_new)
 print("Prediction: {}".format(prediction))
 print("Predicted target name: {}".format(iris_dataset['target_names'][prediction]))
-
-#评估模型
-y_pred = knn.predict(X_test)
-print("Test set score: {:.2f}".format(np.mean(y_pred == y_test)))
-
-
-print("Test set predictions: {}".format(clf.score(X_test, y_test)))
