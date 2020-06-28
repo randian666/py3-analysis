@@ -6,11 +6,11 @@ import time
 from sklearn.metrics import accuracy_score
 
 
+#训练集
 dtrain=xgb.DMatrix('D:/pywork/py3-analysis/xgb/data/agaricus.txt.train')
+#测试集
 dtest=xgb.DMatrix('D:/pywork/py3-analysis/xgb/data/agaricus.txt.test')
-
 print(dtrain.num_col())
-
 print(dtrain.num_row())
 
 # max_depth： 树的最大深度。缺省值为6，取值范围为：[1,∞]
