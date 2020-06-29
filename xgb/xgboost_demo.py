@@ -24,7 +24,6 @@ param = {'max_depth':2, 'eta':1, 'silent':0, 'objective':'binary:logistic' }
 
 # 设置boosting迭代计算次数
 num_round = 2
- 
 
 #构建训练模型
 starttime=time.clock()
