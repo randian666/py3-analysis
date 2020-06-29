@@ -49,6 +49,7 @@ decision_tree.fit(x_train,y_train)
 # y_predict=decision_tree.predict(x_test)
 # print("准确率：",decision_tree.score(x_test,y_test))
 
+#5、模型预测、评分
 # predict_proba返回的是一个 n 行 k 列的数组， 第 i 行 第 j 列上的数值是模型预测 第 i 个预测样本为某个标签的概率，并且每一行的概率和为1。
 y_proba=decision_tree.predict_proba(x_test)[:,1]
 #预测的概率大于0.5的用1表示其他的用0表示
