@@ -75,8 +75,6 @@ print("------------------------------------------end构建第一个模型-------
 种）进行对比。我们可以通过计算精度（accuracy）来衡量模型的优劣，精度就是品种预
 测正确的花所占的比例
 """
-score=knn.score(X_test,Y_test)
-print("knn score:{}".format(score))
-# Y_pred=knn.predict(X_test)
-# print(Y_pred)
-# print("Test score:{}".format(np.mean(Y_pred==Y_test)))
+Y_pred=knn.predict(X_test)
+print(Y_pred)
+print("Test score:{}".format(np.mean(Y_pred==Y_test)))
