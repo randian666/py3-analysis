@@ -33,6 +33,7 @@ for col in data.columns:
 #3、获取数据把数据特征和目标值进行分离，并划分训练集、测试集
 print(data.shape)
 X=data.iloc[:,1:23]  #获取1-23列特征
+
 Y=data.iloc[:, 0] #获取0列目标值
 print(X.head(1))
 print(Y.head(1))

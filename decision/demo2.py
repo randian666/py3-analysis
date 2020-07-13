@@ -13,6 +13,8 @@ from sklearn.ensemble import RandomForestClassifier
 这里使用的数据集是由各种研究人员开始的。其中包括许多研究人员创建的旅客名单，由Michael A. Findlay编辑。
 我们提取的数据集中的特征是票的类别，存活，乘坐班，年龄，登陆，home.dest，房间，票，船和性别。乘坐班是指乘客班（1，2，3），
 是社会经济阶层的代表。其中age数据存在缺失。
+
+随机森林参数：https://blog.csdn.net/qq_16633405/article/details/61200502
 '''
 
 def decision():
