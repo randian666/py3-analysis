@@ -22,3 +22,5 @@ Y.append(end[0][0]+end[1][0]*X[0])
 Y.append(end[0][0]+end[1][0]*X[1])
 plt.plot(X,Y,'g-')
 plt.show()
+
+
