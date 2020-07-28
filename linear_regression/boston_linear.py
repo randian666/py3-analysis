@@ -38,7 +38,8 @@ def bostonlinear():
     lr=LinearRegression()
     lr.fit(x_train,y_train)
     ##查看回归系数(每个特征的权值)
-    print("回归系数",lr.coef_)
+    print("回归系数W",lr.coef_)
+    print("截距B：", lr.intercept_)  
     #预测结果。因为预测的结果是标准化后的值。需要还原
     y_predict=std_y.inverse_transform(lr.predict(x_test))
     print("测试集房子价格预测结果：",y_predict)

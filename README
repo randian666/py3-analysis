@@ -14,4 +14,5 @@ feature_demo-------特征工程
 knn----------------K-近邻算法
 decision-----------决策树
 naivebayes---------朴素贝叶斯
-
+linear_regression--线性回归
+xgb----------------xgboost
