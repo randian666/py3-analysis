@@ -57,6 +57,11 @@ print(arr.min(0))
 # print(arr.argsort()) #返回从小到大的索引值
 # print(np.unique(arr)) #返回数组唯一值
 
+#矩阵计算
+a=[[1,2,3,4],[5,6,7,8]]
+b=[[1],[2],[3],[4]]
+print("矩阵乘法：",np.dot(a,b))
+
 
 
 
