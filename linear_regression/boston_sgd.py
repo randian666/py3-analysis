@@ -33,7 +33,7 @@ def bostonlinear():
     y_train=std_y.fit_transform(y_train.reshape(-1,1))
     y_test=std_y.fit_transform(y_test.reshape(-1,1))
 
-    #4、正规方程求解方式预测结果
+    #4、梯度下降求解方式预测结果
     sgd=SGDRegressor()
     sgd.fit(x_train,y_train)
     ##查看回归系数(每个特征的权值)
