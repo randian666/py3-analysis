@@ -1,5 +1,7 @@
 import sklearn 
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.datasets import load_boston
 #导入线性回归正规方程、梯度下降API
 from sklearn.linear_model import LinearRegression,SGDRegressor
@@ -46,5 +48,6 @@ def bostonlinear():
 
     #5、回归性能评估 真实值与预测值的均方误差
     print("正规方程的均方误差值为：",mean_squared_error(std_y.inverse_transform(y_test),y_predict))
+   
 if __name__ == "__main__":
     bostonlinear()
