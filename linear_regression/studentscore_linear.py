@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 
-#1.导入数据集
+#1.导入数据集,数据地址：https://github.com/MLEveryday/100-Days-Of-ML-Code/tree/master/datasets
 dataset=pd.read_csv('data\studentscores.csv')
 #特征
 X = dataset.iloc[ : ,   : 1 ].values
