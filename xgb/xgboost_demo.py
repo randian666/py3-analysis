@@ -5,11 +5,10 @@ import time
 #导入计算分类正确率工具
 from sklearn.metrics import accuracy_score
 
-
 #训练集
-dtrain=xgb.DMatrix('/data/agaricus.txt.train')
+dtrain=xgb.DMatrix('/Users/lolita/pythonwork/py3-analysis/xgb/data/agaricus.txt.train')
 #测试集
-dtest=xgb.DMatrix('/data/agaricus.txt.test')
+dtest=xgb.DMatrix('/Users/lolita/pythonwork/py3-analysis/xgb/data/agaricus.txt.test')
 print(dtrain.num_col())
 print(dtrain.num_row())
 
