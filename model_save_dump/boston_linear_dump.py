@@ -1,12 +1,7 @@
 import sklearn 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.datasets import load_boston
-#导入线性回归正规方程、梯度下降API
-from sklearn.linear_model import LinearRegression,SGDRegressor
-#数据集分割API
-from sklearn.model_selection import train_test_split
 #导入标准化API
 from sklearn.preprocessing import StandardScaler
 #导入均方误差API
@@ -45,7 +40,7 @@ def bostonlinear():
     model=joblib.load("./temp/lr_20210131.pkl");
     #预测房价结果
     predict_data=model.predict(x_test)
-    print("利用保存后的模型预测出来的原始结果")
+    print("利用保存后的模型预测出来的原始结果") 
     print(predict_data)
     y_predict=std_y.inverse_transform(predict_data)
     print("利用保存后的模型预测出来的结果")
