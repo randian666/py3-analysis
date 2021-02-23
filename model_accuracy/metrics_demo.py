@@ -1,3 +1,8 @@
+'''
+来源：
+https://zhuanlan.zhihu.com/p/234533748
+'''
+
 from sklearn import metrics
 from matplotlib import pyplot as plt
 plt.rcParams['font.sans-serif'] = ['SimHei']  
@@ -12,16 +17,16 @@ y_pred=[0,0,0,1,0]
 # 混淆矩阵
 C = metrics.confusion_matrix(y_true, y_pred)
 print("混淆矩阵为：\n",C)
-# 计算准确率（accuracy）
+# 计算准确率（accuracy）- 预测正确的占比
 accuracy = metrics.accuracy_score(y_true,y_pred)
 print("准确度为：\n",accuracy)
-# 计算精确率（precision）
+# 计算精确率（precision）-在真实值为正的样本中，预测正确的样本占比
 precision = metrics.precision_score(y_true,y_pred)
 print("精确率为：\n",precision)
-# 计算召回率（recall）
+# 计算召回率（recall） - 在预测值为正的样本中，预测为正的样本占比
 recall = metrics.recall_score(y_true,y_pred)
 print("召回率为：\n",recall)
-# 计算F1-score（F1-score）
+# 计算F1-score（F1-score）是统计学中用来衡量二分类模型精确度的一种指标。它同时兼顾了分类模型的准确率和召回率。F1分数可以看作是模型准确率和召回率的一种加权平均，它的最大值是1，最小值是0
 F1_score = metrics.f1_score(y_true,y_pred)
 print("精确率为：\n",F1_score)
 
