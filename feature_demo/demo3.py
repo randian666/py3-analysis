@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # coding:utf-8
 
-from sklearn.preprocessing import MinMaxScaler,StandardScaler,Imputer
+from sklearn.preprocessing import MinMaxScaler,StandardScaler
+from sklearn.impute import SimpleImputer
 import numpy as np
 '''
 数据特征预处理
@@ -47,7 +48,7 @@ def stand():
 '''
 def im():
    #按列的平均值进行处理
-   im= Imputer(missing_values='NaN',strategy='mean',axis=0)
+   im= SimpleImputer(missing_values=np.nan,strategy='mean')
    param = np.array([[1,2],[np.nan,3],[7,6]])
    data=im.fit_transform(param)
    print(data)

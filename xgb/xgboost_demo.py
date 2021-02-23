@@ -6,9 +6,9 @@ import time
 from sklearn.metrics import accuracy_score
 
 #训练集
-dtrain=xgb.DMatrix('/Users/lolita/pythonwork/py3-analysis/xgb/data/agaricus.txt.train')
+dtrain=xgb.DMatrix('xgb/data/agaricus.txt.train')
 #测试集
-dtest=xgb.DMatrix('/Users/lolita/pythonwork/py3-analysis/xgb/data/agaricus.txt.test')
+dtest=xgb.DMatrix('xgb/data/agaricus.txt.test')
 print(dtrain.num_col())
 print(dtrain.num_row())
 
@@ -25,9 +25,9 @@ param = {'max_depth':2, 'eta':1, 'silent':0, 'objective':'binary:logistic' }
 num_round = 2
 
 #构建训练模型
-starttime=time.clock()
+starttime=time.process_time()
 bst=xgb.train(param,dtrain,num_round)# dtrain是训练数据集
-endtime=time.clock()
+endtime=time.process_time()
 print ('耗时：',(endtime - starttime))
 
 # XGBoost预测的输出是概率。这里蘑菇分类是一个二类分类问题，输出值是样本为第一类的概率。
