@@ -18,7 +18,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 #1、数据获取、分析
-data=pd.read_csv("D:/pywork/py3-analysis/mushrooms_predict/data/mushrooms.csv")
+data=pd.read_csv("mushrooms_predict/data/mushrooms.csv")
 print(data.head(10))
 #查看是否有空的数据
 print(data.isnull().sum())

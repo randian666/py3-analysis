@@ -36,7 +36,7 @@ y_true = [0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0]
 
 precision,recall,thresholds = metrics.precision_recall_curve(y_true, y_pred)
 plt.plot(precision, recall)
-plt.title("PR曲线")
+plt.title("PR Curve")
 plt.xlabel("recall")
 plt.ylabel("precision")
 plt.show()
@@ -46,8 +46,10 @@ y_pred = [0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1]
 y_true = [0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0]
 
 FPR,TPR,thresholds = metrics.roc_curve(y_true,y_pred)
+print("FPR:",FPR)
+print("TPR:",TPR)
 plt.plot(FPR, TPR)
-plt.title("ROC曲线")
+plt.title("ROC Curve")
 plt.xlabel("recall")
 plt.ylabel("precision")
 plt.plot([0,1],[0,1],'r--') 
@@ -62,8 +64,14 @@ print('AUC socre:',metrics.roc_auc_score(y_true, y_scores))
 y_pred = [0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1] 
 y_true = [0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0]
 FPR,TPR,thresholds = metrics.roc_curve(y_true,y_pred)
+accuracy = metrics.accuracy_score(y_true,y_pred)
+print("准确度为：\n",accuracy)
+print("真正率（TPR）:",TPR)
+print("伪正率（FPR）:",FPR)
+print("thresholds:",thresholds)
 
 # 绘制KS曲线
+plt.title("KS Curve")
 plt.plot(thresholds, FPR)
 plt.plot(thresholds, TPR)
 plt.show()

@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 #1、数据获取、分析
-data=pd.read_csv("D:/pywork/py3-analysis/mushrooms_predict/data/mushrooms.csv")
+data=pd.read_csv("mushrooms_predict/data/mushrooms.csv")
 print(data.head(10))
 print(type(data))
 #检查每个特征有没有空值
