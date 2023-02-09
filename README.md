@@ -28,3 +28,6 @@ Anaconda利用工具/命令conda来进行package和environment的管理，并且
 - xgb----------------xgboost
 - model_save_dump----模型保存和加载
 - model_accuracy-----模型的评估方法
+
+## 深度学习
+- DL-----------------深度学习入门
